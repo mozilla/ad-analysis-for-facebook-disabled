@@ -1,0 +1,60 @@
+@import (reference) "../common/photon-colors.less";
+@import (reference) "../common/common.less";
+
+@panelWidth: 320px;
+@sidePadding: 14px;
+@rowPadding: 8px;
+@border: 1px solid #ccc;
+
+html, body, div, table, tr, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html {
+	width: @panelWidth;
+	overflow-x: hidden;
+	overflow-y: scroll;
+}
+
+body {
+	width: @panelWidth;
+	background-color: @white-100;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	user-select: none;
+	-moz-user-select: none;
+}
+
+.panel {
+	width: @panelWidth;
+	font-family: @fontFamily;
+	font-size: @fontSize;
+	font-weight: @fontWeight;
+	color: @textBlackForeground;
+
+	.row {
+		padding: @sidePadding;
+		border-top: @border;
+		&:first-child {
+			border-top: none;
+		}
+		&.headerRow {
+			padding-top: @rowPadding;
+			padding-bottom: @rowPadding;
+			font-weight: @fontSemiBoldWeight;
+		}
+		
+		.text {
+			margin-bottom: @rowPadding;
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			a {
+				color: @blue-60;
+			}
+		}
+	}
+}
