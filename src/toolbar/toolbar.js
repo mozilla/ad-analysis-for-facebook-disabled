@@ -1,5 +1,14 @@
 "use strict";
+
 import "./toolbar.less";
+
+import displayBadge from "../common/display-badge.js";
+import DataStorage from "../common/data-storage.js";
+import Monitor from "../common/monitor.js";
+
+// ==== START ==================================================================
+
+// ---- Constants for US English -----------------------------------------------
 
 /**
  * @const {string} Title of the doorhanger.
@@ -13,7 +22,6 @@ const strLanguages = {
 	"strTitle": "Ad Analysis for Facebook",
 	"strDisabledMessage": "Ad Analysis for Facebook is temporarily disabled. Facebook has blocked this extension, so it will no longer show you how you’re targeted by advertisers. ",
 	"strLearnMore": "Learn more",
-	"strBlogPost": "Mozilla Raises Concerns Over Facebook's Lack of Transparency",
 	"strBrowseMessage": "You may continue to browse the following public datasets.",
 	"strTargetingData": "Targeting data collected by ProPublica",
 	"strElectionData": "Top political advertisers in the United States",
@@ -28,21 +36,55 @@ const aLinks = {
 	"strElectionData": "https://mozilla.github.io/ad-analysis-for-facebook/info.html#TopAdvertisers",
 };
 
+// ---- Start of doorhanger script ---------------------------------------------
+
+// Access persistent data storage
+const dataStorage = new DataStorage();
+
+// Log UI events. Ensure query selections are non-empty.
+const monitor = new Monitor("toolbar");
+
 // Insert all strings and links into the doorhanger HTML document.
-document.addEventListener("DOMContentLoaded", function() {
+const loader = function() {
+	monitor.enter("loader");
+
+	// Update the title of the document.
 	document.title = title;
+
+	// Update text in the document.
 	for (const key in strLanguages) {
 		const value = strLanguages[key];
-		document.querySelectorAll(`.str.${key}`).forEach(elem => {
+		const selector = `.str.${key}`;
+		const elems = document.querySelectorAll(selector);
+		monitor.assert(elems && elems.length > 0, "Empty query selection:", selector);
+		elems.forEach(elem => {
 			elem.innerText = value;
 		});
 	}
+
+	// Update links in the document.
 	for (const key in aLinks) {
 		const value = aLinks[key];
-		document.querySelectorAll(`a.str.${key}`).forEach(elem => {
+		const selector = `a.str.${key}`;
+		const elems = document.querySelectorAll(selector);
+		monitor.assert(elems && elems.length > 0, "Empty query selection:", selector);
+		elems.forEach(elem => {
 			elem.href = value;
 			elem.rel = "noopener noreferrer";
 			elem.target = "_blank";
 		});
 	}
-});
+
+	// Record that the user has opened the doorhanger.
+	// Update the badge over the toolbar icon.
+	dataStorage.setExtensionUpdateMessage(1.1).then(version => {
+		const showOneTimeMessage = !(version && version >= 1.1);
+		displayBadge(showOneTimeMessage);
+		monitor.exit("loader");
+	});
+};
+
+// Run loader when the doorhanger HTML document finishes loading.
+document.addEventListener("DOMContentLoaded", loader);
+
+// ==== END ====================================================================

@@ -1,35 +1,17 @@
 "use strict";
 
-/**
- * @const {string} Text of the badge ('X' for disabled).
- **/
-const badgeText = "X";
+import DataStorage from "../common/data-storage.js";
+import displayBadge from "../common/display-badge.js";
 
-/**
- * @const {string} Foreground color of the badge (white).
- **/
-const badgeColor = "#fff";
+// ==== START ==================================================================
 
-/**
- * @const {string} Background color of the badge (red).
- **/
-const badgeBackground = "#d62728";
+// Access persistent data storage.
+const dataStorage = new DataStorage();
 
-/**
- * Display a badge over the toolbar icon.
- * @private
- **/
-const displayBadge = () => {
-	browser.browserAction.setBadgeTextColor({
-		"color": badgeColor,
-	});
-	browser.browserAction.setBadgeBackgroundColor({
-		"color": badgeBackground,
-	});
-	browser.browserAction.setBadgeText({
-		"text": badgeText,
-	});
-};
+// Display a badge over the toolbar icon.
+dataStorage.getExtensionUpdateMessage().then(version => {
+	const showOneTimeMessage = !(version && version >= 1.1);
+	displayBadge(showOneTimeMessage);
+});
 
-// Globally display a badge on startup.
-displayBadge();
+// ==== END ====================================================================
