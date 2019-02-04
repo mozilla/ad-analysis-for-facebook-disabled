@@ -109,7 +109,7 @@ module.exports = [{
 		generateHtmlFiles("toolbar"),
 		copyAssetFiles("toolbar", outputDebugFolder),
 		copyManifestJson(outputDebugFolder),
-		generateEnvironmentVariables(),
+		generateEnvironmentVariables(false),
 		lintStyleFiles(),
 	],
 	devtool: "inline-source-map",
