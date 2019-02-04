@@ -20,7 +20,7 @@ const title = "Ad Analysis for Facebook (U.S. English) - DISABLED";
  **/
 const strLanguages = {
 	"strTitle": "Ad Analysis for Facebook",
-	"strDisabledMessage": "Ad Analysis for Facebook is temporarily disabled. Facebook has blocked this extension, so it will no longer show you how you’re targeted by advertisers. ",
+	"strDisabledMessage": "Ad Analysis for Facebook is temporarily disabled. Facebook has blocked this extension, so it will no longer show you how you're targeted by advertisers.",
 	"strLearnMore": "Learn more",
 	"strBrowseMessage": "You may continue to browse the following public datasets.",
 	"strTargetingData": "Targeting data collected by ProPublica",
