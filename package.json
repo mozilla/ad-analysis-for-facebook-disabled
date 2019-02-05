@@ -45,8 +45,8 @@
     "watch": "webpack --watch --progress",
     "prefirefox": "npm start",
     "firefox": "web-ext run",
-	"preamo": "npm start",
-	"amo": "web-ext build",
-	"postamo": "zip -r web-ext-artifacts/amo-source.zip src *.json *.js .eslintrc .stylelintrc"
+    "preamo": "npm start",
+    "amo": "web-ext build",
+    "postamo": "zip -r web-ext-artifacts/amo-source.zip src *.json *.js .eslintrc .stylelintrc"
   }
 }
