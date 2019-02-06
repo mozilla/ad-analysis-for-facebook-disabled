@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 "use strict";
 
-import Monitor from "../common/monitor.js";
+import Monitor from "common/monitor.js";
 
 // ==== START ==================================================================
 

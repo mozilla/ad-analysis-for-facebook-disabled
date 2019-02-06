@@ -3,8 +3,8 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 "use strict";
 
-import DataStorage from "../common/data-storage.js";
-import displayBadge from "../common/display-badge.js";
+import DataStorage from "common/data-storage.js";
+import displayBadge from "common/display-badge.js";
 
 // ==== START ==================================================================
 

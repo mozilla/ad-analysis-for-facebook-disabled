@@ -5,9 +5,9 @@
 
 import "./toolbar.less";
 
-import displayBadge from "../common/display-badge.js";
-import DataStorage from "../common/data-storage.js";
-import Monitor from "../common/monitor.js";
+import displayBadge from "common/display-badge.js";
+import DataStorage from "common/data-storage.js";
+import Monitor from "common/monitor.js";
 
 // ==== START ==================================================================
 

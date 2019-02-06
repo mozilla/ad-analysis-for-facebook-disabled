@@ -112,6 +112,13 @@ module.exports = [{
 		generateEnvironmentVariables(false),
 		lintStyleFiles(),
 	],
+	resolve: {
+		alias: {
+			toolbar: path.resolve(__dirname, inputSourceFolder, "toolbar"),
+			background: path.resolve(__dirname, inputSourceFolder, "background"),
+			common: path.resolve(__dirname, inputSourceFolder, "common"),
+		},
+	},
 	devtool: "inline-source-map",
 	watch: false,
 	watchOptions: watchOptions,
@@ -135,4 +142,11 @@ module.exports = [{
 		generateEnvironmentVariables(true),
 		lintStyleFiles(true),
 	],
+	resolve: {
+		alias: {
+			toolbar: path.resolve(__dirname, inputSourceFolder, "toolbar"),
+			background: path.resolve(__dirname, inputSourceFolder, "background"),
+			common: path.resolve(__dirname, inputSourceFolder, "common"),
+		},
+	},
 }];
