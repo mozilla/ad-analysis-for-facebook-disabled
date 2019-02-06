@@ -1,6 +1,5 @@
 module.exports = {
   sourceDir: "./build-release/",
-  ignoreFiles: [".DS_Store"],
   build: {
     overwriteDest: true
   },
