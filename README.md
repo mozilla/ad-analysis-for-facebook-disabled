@@ -45,7 +45,7 @@ npm install
 
 To build the extension, run:
 ```
-npm start
+npm run build
 ```
 
 To start the continuous build environment, run:

@@ -40,11 +40,11 @@
     "url": "git+https://github.com/mozilla/ad-analysis-for-facebook-disabled.git"
   },
   "scripts": {
-    "start": "webpack",
+    "build": "webpack",
     "watch": "webpack --watch --progress",
-    "prefirefox": "npm start",
+    "prefirefox": "npm run build",
     "firefox": "web-ext run",
-    "preamo": "npm start",
+    "preamo": "npm run build",
     "amo": "web-ext build",
     "postamo": "zip -r web-ext-artifacts/amo-source.zip src *.json *.js .eslintrc .stylelintrc"
   }
