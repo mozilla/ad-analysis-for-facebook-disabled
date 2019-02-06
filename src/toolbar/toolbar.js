@@ -1,12 +1,19 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/**
+ * @overview Doorhanger script of the Ad Analysis for Facebook extension.
+ *     In this disabled version of the extension, the scripts fills in the text
+ *     message and relevant links in the doorhanger, and records that the user
+ *     has seen the latest message for version 1.1.x.
+ * @author Jason Chuang <jchuang@mozilla.com>
+ **/
+
 "use strict";
-
-import "./toolbar.less";
-
-import displayBadge from "common/display-badge.js";
+import "toolbar/toolbar.less";
 import DataStorage from "common/data-storage.js";
+import displayBadge from "common/display-badge.js";
 import Monitor from "common/monitor.js";
 
 // ==== START ==================================================================

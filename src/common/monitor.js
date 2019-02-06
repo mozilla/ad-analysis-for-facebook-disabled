@@ -1,7 +1,20 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/**
+ * @overview Utility library for the Ad Analysis for Facebook extension.
+ *     A combination of logging and log formatting tools to aid development,
+ *     debugging, and testing. Most of the funcationalities are removed in
+ *     the release build. Allow various "types" of events to be logged
+ *     separately including traditional control flows, data events, and
+ *     browser extension communication. Allow simple assertions.
+ * @author Jason Chuang <jchuang@mozilla.com>
+ **/
+
 "use strict";
+
+// ==== START ==================================================================
 
 /**
  * @const {object} Default values for all event keys.
@@ -128,7 +141,7 @@ const displayMessage = function(key, message, obj, isWarning = false) {
 
 /**
  * Monitor class to log different types of events.
- * @constructor
+ * @class
  **/
 const Monitor = function(identifier, optFlags = {}) {
 	this._identifier = identifier;
@@ -169,5 +182,7 @@ Monitor.prototype.enable = function() {
 Monitor.prototype.disable = function() {
 	this._isEnabled = false;
 };
+
+// ==== END ====================================================================
 
 export default Monitor;
