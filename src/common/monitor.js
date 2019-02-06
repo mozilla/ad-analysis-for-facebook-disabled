@@ -103,7 +103,7 @@ const assertHandler = function(expression, message, obj) {
 };
 
 /**
- * Prepare to display a message.
+ * Prepare to display a (nicely-formatted) message.
  * @function
  **/
 const displayMessage = function(key, message, obj, isWarning = false) {
@@ -119,7 +119,6 @@ const displayMessage = function(key, message, obj, isWarning = false) {
 		}
 		return "[" + keyStrs[key] + "]";
 	};
-
 	if (this._isEnabled && this._flags[key]) {
 		const idStr = `[${this._identifier.substring(0, 10).padEnd(10, " ")}]`;
 		const keyStr = getKeyStrs(key);
