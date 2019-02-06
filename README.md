@@ -34,7 +34,13 @@ The [Online Political Ads Transparency Project](https://engineering.nyu.edu/onli
 
 ## Load the Add-on in Firefox
 
-Enter `about:debugging` in the address bar in Firefox. Load the Add-on as a temporary extension by selecting `build-debug/manifest.json`.
+If you have `npm` and the development environment (see below) set up on your machine, you can load the extension by running
+
+```
+npm start
+```
+
+Otherwise, you also load the extension in Firefox via the Developer Tools. Start Firefox. Enter `about:debugging` in the address bar. Load the Add-on as a temporary extension by selecting `build-debug/manifest.json` or `build-release/manifest.json`.
 
 ## Set up a development environment
 
@@ -53,14 +59,7 @@ To start the continuous build environment, run:
 npm run watch
 ```
 
-## Web extension testing
-
-To test the release build of the extension, run:
-```
-npm run firefox
-```
-
-## AMO Release
+## Release on AMO
 
 To prepare all files needed for publishing the extension on [AMO](https://addons.mozilla.org), run:
 ```

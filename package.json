@@ -40,6 +40,7 @@
     "url": "git+https://github.com/mozilla/ad-analysis-for-facebook-disabled.git"
   },
   "scripts": {
+    "start": "npm run firefox",
     "build": "webpack",
     "watch": "webpack --watch --progress",
     "prefirefox": "npm run build",
