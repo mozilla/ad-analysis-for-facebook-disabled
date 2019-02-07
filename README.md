@@ -34,13 +34,13 @@ The [Online Political Ads Transparency Project](https://engineering.nyu.edu/onli
 
 ## Load the Add-on in Firefox
 
-If you have `npm` and the development environment (see below) set up on your machine, you can load the extension by running
+If you have `npm` and the development environment set up on your machine (see below), you can load the extension by running
 
 ```
 npm start
 ```
 
-Otherwise, you also load the extension in Firefox via the Developer Tools. Start Firefox. Enter `about:debugging` in the address bar. Load the Add-on as a temporary extension by selecting `build-debug/manifest.json` or `build-release/manifest.json`.
+Otherwise, you also load the extension in Firefox via the Developer Tools. Start Firefox. Enter `about:debugging` in the address bar. Load the Add-on as a temporary extension by selecting `ad_analysis_for_facebook_u.s._english_-_disabled-1.1.0.zip` (or the desired version of the build) from folder `web-ext-artifacts`.
 
 ## Set up a development environment
 
