@@ -20,7 +20,7 @@ import displayBadge from "common/display-badge.js";
 const dataStorage = new DataStorage();
 
 // Display a badge over the toolbar icon.
-dataStorage.getExtensionUpdateMessage().then(version => {
+dataStorage.getExtensionUpdateMessageVersion().then(version => {
 	const showOneTimeMessage = !(version && version >= 1.1);
 	displayBadge(showOneTimeMessage);
 });

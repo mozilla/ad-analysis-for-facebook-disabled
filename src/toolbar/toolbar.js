@@ -87,7 +87,7 @@ const loader = function() {
 
 	// Record that the user has opened the doorhanger.
 	// Update the badge over the toolbar icon.
-	dataStorage.setExtensionUpdateMessage(1.1).then(version => {
+	dataStorage.setExtensionUpdateMessageVersion(1.1).then(version => {
 		const showOneTimeMessage = !(version && version >= 1.1);
 		displayBadge(showOneTimeMessage);
 		monitor.exit("loader");

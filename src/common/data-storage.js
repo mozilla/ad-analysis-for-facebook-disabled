@@ -16,7 +16,7 @@ import Monitor from "common/monitor.js";
 /**
  * @constant {string} Key for displaying one-time messages after an update.
  **/
-const EXTENSION_UPDATE_MESSAGE_KEY = "extensionUpdateMessage";
+const EXTENSION_UPDATE_MESSAGE_VERSION_KEY = "extensionUpdateMessageVersion";
 
 /**
  * Interface to store and retrieve persistent data.
@@ -78,32 +78,32 @@ DataStorage.prototype._getValue = function(key) {
 // ---- Public methods ---------------------------------------------------------
 
 /**
- * Set the value of "extensionUpdateMessage".
+ * Set the value of "extensionUpdateMessageVersion".
  * @public @async
  * @param {number} version - Latest extension version.
  * @returns {number} Latest extension version.
  **/
-DataStorage.prototype.setExtensionUpdateMessage = function(version) {
+DataStorage.prototype.setExtensionUpdateMessageVersion = function(version) {
 	return new Promise(resolve => {
-		this._monitor.enter("setExtensionUpdateMessage");
+		this._monitor.enter("setExtensionUpdateMessageVersion");
 		this._monitor.assert(typeof version === "number", "version =", version);
-		this._setValue(EXTENSION_UPDATE_MESSAGE_KEY, version).then(version => {
-			this._monitor.exit("setExtensionUpdateMessage");
+		this._setValue(EXTENSION_UPDATE_MESSAGE_VERSION_KEY, version).then(version => {
+			this._monitor.exit("setExtensionUpdateMessageVersion");
 			resolve(version);
 		});
 	});
 };
 
 /**
- * Get the value of "extensionUpdateMessage".
+ * Get the value of "extensionUpdateMessageVersion".
  * @public @async
  * @returns {number} Latest extension version.
  **/
-DataStorage.prototype.getExtensionUpdateMessage = function() {
+DataStorage.prototype.getExtensionUpdateMessageVersion = function() {
 	return new Promise(resolve => {
-		this._monitor.enter("getExtensionUpdateMessage");
-		this._getValue(EXTENSION_UPDATE_MESSAGE_KEY).then(version => {
-			this._monitor.exit("getExtensionUpdateMessage");
+		this._monitor.enter("getExtensionUpdateMessageVersion");
+		this._getValue(EXTENSION_UPDATE_MESSAGE_VERSION_KEY).then(version => {
+			this._monitor.exit("getExtensionUpdateMessageVersion");
 			resolve(version);
 		});
 	});
