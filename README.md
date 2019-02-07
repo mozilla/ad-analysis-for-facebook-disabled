@@ -1,10 +1,6 @@
 # Ad Analysis for Facebook (U.S. English)
 
-Get the extension from [Add-ons for Firefox (en-US)](https://addons.mozilla.org/en-US/firefox/addon/ad-analysis-for-facebook/).
-
-## Temporarily Disabled
-
-Ad Analysis for Facebook (U.S. English) has been temporarily disabled.
+**Ad Analysis for Facebook is temporarily disabled. Facebook has blocked this extension, so it will no longer show you how you're targeted by advertisers. [Learn more](https://blog.mozilla.org/blog/2019/01/31/mozilla-raises-concerns-over-facebooks-lack-of-transparency/)**
 
 ## How Facebook Helps Advertisers Target You
 
