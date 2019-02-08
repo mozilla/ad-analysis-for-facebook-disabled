@@ -1,6 +1,6 @@
 {
 	"manifest_version": 2,
-	"name": "Ad Analysis for Facebook (U.S. English) - DISABLED",
+	"name": "Ad Analysis for Facebook - DISABLED",
 	"short_name": "Ad Analysis for Facebook",
 	"description": "See how Facebook helps advertisers target you",
 	"homepage_url": "https://github.com/mozilla/ad-analysis-for-facebook-disabled",
@@ -20,7 +20,7 @@
 		]
 	},
 	"browser_action": {
-		"default_title": "Ad Analysis for Facebook (U.S. English) - DISABLED",
+		"default_title": "Ad Analysis for Facebook - DISABLED",
 		"default_popup": "toolbar/index.html",
 		"default_icon": "toolbar/assets/toolbar-icon-light.svg",
 		"theme_icons": [{
