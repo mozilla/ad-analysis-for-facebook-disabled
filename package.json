@@ -4,7 +4,7 @@
   "version": "1.1.0",
   "author": "Jason Chuang (jchuang@mozilla.com)",
   "bugs": {
-    "url": "https://github.com/mozilla/ad-analysis-for-facebook/issues"
+    "url": "https://github.com/mozilla/ad-analysis-for-facebook-disabled/issues"
   },
   "dependencies": {
     "npm": "^6.5.0"
