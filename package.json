@@ -47,6 +47,6 @@
     "firefox": "web-ext run",
     "preamo": "npm run build",
     "amo": "web-ext build",
-    "postamo": "zip -r web-ext-artifacts/amo-source.zip src *.json *.js .eslintrc .stylelintrc"
+    "postamo": "zip -r web-ext-artifacts/amo-source.zip src *.json *.js .babelrc .eslintrc .stylelintrc"
   }
 }
